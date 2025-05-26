@@ -205,9 +205,8 @@
   .summary .links{
     display: block;
     padding: 2rem;
-    width: 52rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 5px;
+    margin-right: 5px;
     background: #efdd6c;
     border: 2px solid #8A7909;
     border-radius: 1rem;
