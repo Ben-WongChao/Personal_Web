@@ -205,11 +205,11 @@
   .summary .links{
     display: block;
     padding: 2rem;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
     background: #efdd6c;
     border: 2px solid #8A7909;
-    border-radius: 1rem;
     z-index: 1;
     position: relative;
     top: -6.66rem;
@@ -700,6 +700,14 @@
         display: block;
         font-size: 2rem;
         text-transform: uppercase;
+      }
+      .summary .links {
+        top:0;
+        left: 0;
+        width: 100%;
+        border-top: none;
+        border-left: none;
+        border-right: none;
       }
   }
 
