@@ -1,0 +1,57 @@
+@font-face{
+    font-family: 'RecoletaBold';
+    font-display: swap;
+    src:url(./fonts/recoleta/RecoletaSemiBold.woff2) format('woff2'),url(./fonts/recoleta/RecoletaSemiBold.woff) format('woff');
+  }
+  @font-face{
+    font-family: 'RecoletaBlack';
+    font-display: swap;
+    src:url(./fonts/recoleta/RecoletaBlack.woff2) format('woff2'),url(./fonts/recoleta/RecoletaBlack.woff) format('woff');
+  }
+  @font-face{
+    font-family: 'SmileySans';
+    font-display: swap;
+    src:url(./fonts/SmileySans-Oblique-3.otf) format('woff2'),url(./fonts/SmileySans-Oblique-3.otf) format('woff');
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "RecoletaBold", sans-serif;
+    min-height: 100vh;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background: #ff0062;
+}
+.header h1{
+    color: aliceblue;
+    font-size: 3.5em;
+    text-shadow: 3px 3px #73001f;
+}
+.snow{
+    height: 300px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    background: #f4dd88;
+}
+.snow span{
+    font-family: "SmileySans", sans-serif;
+    padding-right: 20px;
+    font-size: 1.5em;
+    color: #886a00;
+}
+.working{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

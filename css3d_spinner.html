@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #6a6a6a;
+    }
+    .box{
+        position: absolute;
+        transform-style: preserve-3d;
+        width: 200px;
+        height: 300px;
+        transform: perspective(1000px) rotateY(-45deg);
+    }
+    .box::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        background: #0009;
+        width: 100%;
+        height: 150px;
+        left: 0;
+        bottom: -180px;
+        transform: rotateX(90deg);
+        filter: blur(30px);
+        opacity: 0.5;
+    }
+    .box div{
+        position: absolute;
+        inset: 0;
+        transform-style: preserve-3d;
+        animation: animate 5s linear infinite;
+    }
+    @keyframes animate {
+        0%
+        {
+            transform: perspective(1000px) rotateX(0deg);
+        }
+        100%
+        {
+            transform: perspective(1000px) rotateX(359deg);
+        }
+    }
+    .box div span{
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg,#f1f1f1,#bbb);
+        border-radius: 20px;
+        transform: rotateX(calc(var(--i) * 45deg));
+        transform-style: preserve-3d;
+    }
+</style>
+<body>
+    <div class="box">
+        <div>
+            <span style="--i:1"></span>
+            <span style="--i:2"></span>
+            <span style="--i:3"></span>
+            <span style="--i:4"></span>
+        </div>
+    </div>
+</body>
+</html>
