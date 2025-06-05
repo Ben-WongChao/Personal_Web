@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid_1</title>
+    <style>
+        *{
+            margin: 2px;
+            padding: 2px;
+        }
+        body{
+            background-color:#E7E9EB;
+            display: grid;
+            gap: 3px;
+            grid-template-columns: 220px calc(100vw - 250px);
+            grid-template-rows: 50px calc(100vh - 120px) 50px;
+            grid-template-areas:
+            "navbar navbar"
+            "asidebar main"
+            "asidebar footer";
+        }
+        div{
+            border: 1px solid;
+            border-radius: 3px;
+        }
+        .nav{
+            grid-area: navbar;
+        }
+        .aside{
+            grid-area: asidebar;
+        }
+        .main{
+            grid-area: main;
+        }
+        .footer{
+            grid-area: footer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">Nav</div>
+    <div class="aside">Aside</div>
+    <div class="main">Main</div>
+    <div class="footer">Footer</div>
+</body>
+</html>

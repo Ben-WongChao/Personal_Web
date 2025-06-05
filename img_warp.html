@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImgWarp</title>
+    <style>
+        body {
+  font-family: "Google Sans", sans-serif;
+  font-size: 11px;
+}
+.img-wrap img {
+  border-radius: 120px;
+  width: 120px;
+  overflow: hidden;
+  height: 120px;
+}
+.img-wrap {
+  height: 120px;
+  width: 120px;
+  transition: 400ms all;
+  position: relative;
+  animation-name: wobble;
+  animation-delay: 0s;
+  animation-duration: 4s;
+  /* same for all */
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  cursor: pointer;
+}
+.img-wrap.selected {
+  width: 200px;
+  height: 200px;
+}
+.img-wrap:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 90%;
+  height: 80%;
+  bottom: 0;
+  left: 50%;
+  border-radius: 100%;
+  transform: translateX(-50%);
+  background-color: #e0e0e0;
+}
+.img-wrap:after {
+  background-color: #e0e0e0;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  content: attr(data-role);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: absolute;
+  transition: 300ms 400ms all;
+  bottom: 6px;
+  left: 50%;
+  display: block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  z-index: 12;
+  transform: translateX(-50%);
+}
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+}
+.xs {
+  width: 30px;
+  height: 30px;
+}
+.s {
+  width: 40px;
+  height: 40px;
+}
+.m {
+  width: 60px;
+  height: 60px;
+}
+.l {
+  width: 80px;
+  height: 80px;
+}
+.imgs {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+.img-wrap:nth-child(1) {
+  animation-delay: 0.24s;
+}
+.img-wrap:nth-child(2) {
+  animation-delay: 0.48s;
+}
+.img-wrap:nth-child(3) {
+  animation-delay: 0.72s;
+}
+.img-wrap:nth-child(4) {
+  animation-delay: 0.96s;
+}
+.img-wrap:nth-child(5) {
+  animation-delay: 1.2s;
+}
+.img-wrap:nth-child(6) {
+  animation-delay: 1.44s;
+}
+.img-wrap:nth-child(7) {
+  animation-delay: 1.68s;
+}
+.img-wrap:nth-child(8) {
+  animation-delay: 1.92s;
+}
+.img-wrap:nth-child(9) {
+  animation-delay: 2.16s;
+}
+.img-wrap:nth-child(10) {
+  animation-delay: 2.4s;
+}
+.img-wrap:nth-child(11) {
+  animation-delay: 2.64s;
+}
+.img-wrap:nth-child(12) {
+  animation-delay: 2.88s;
+}
+.img-wrap:nth-child(13) {
+  animation-delay: 3.12s;
+}
+.img-wrap:nth-child(14) {
+  animation-delay: 3.36s;
+}
+.img-wrap:nth-child(4n + 1):before {
+  background: #4da667;
+}
+.img-wrap:nth-child(4n + 1):after {
+  background: #4da667;
+}
+.img-wrap:nth-child(4n + 2):before {
+  background: #f6cf64;
+}
+.img-wrap:nth-child(4n + 2):after {
+  background: #f6cf64;
+}
+.img-wrap:nth-child(4n + 3):before {
+  background: #a9accd;
+}
+.img-wrap:nth-child(4n + 3):after {
+  background: #a9accd;
+}
+.img-wrap:nth-child(4n + 4):before {
+  background: #e0e0e0;
+}
+.img-wrap:nth-child(4n + 4):after {
+  background: #e0e0e0;
+}
+@keyframes wobble {
+  0%, 100% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-1%) translateY(-1%);
+  }
+  30% {
+    transform: translateX(1%) translateY(-1%);
+  }
+  45% {
+    transform: translateX(1%) translateY(1%);
+  }
+  60% {
+    transform: translateX(-1%) translateY(1%);
+  }
+  75% {
+    transform: translateX(1%) translateY(0);
+  }
+  90% {
+    transform: translateX(-1%) translateY(0);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="imgs">
+    <div class="img-wrap" data-role="Engineer"><img src='https://avataaars.io/?avatarStyle=Transparent&topType=LongHairNotTooLong&accessoriesType=Blank&hairColor=SilverGray&facialHairType=Blank&clotheType=Hoodie&clotheColor=Heather&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Serious&skinColor=DarkBrown' />
+    </div>
+    <div class="img-wrap" data-role="Hunter"><img src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Round&hairColor=Blonde&facialHairType=BeardLight&facialHairColor=Auburn&clotheType=ShirtVNeck&clotheColor=Black&eyeType=Squint&eyebrowType=Default&mouthType=Smile&skinColor=Light' /></div>
+    
+    <div class="img-wrap" data-role="Investigator"><img src='https://avataaars.io/?avatarStyle=Transparent&topType=Hijab&accessoriesType=Round&hatColor=Blue03&clotheType=ShirtVNeck&clotheColor=Gray02&eyeType=Squint&eyebrowType=Default&mouthType=Twinkle&skinColor=Brown' /></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { 
+  const imgWraps = document.querySelectorAll('.img-wrap');
+
+    imgWraps.forEach(imgWrap => {
+    imgWrap.addEventListener('click', () => {
+      imgWrap.classList.toggle('selected');
+    });
+  });
+});
+    </script>
+</body>
+</html>

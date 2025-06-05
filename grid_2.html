@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid_2</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h1{
+        margin: 20px 0;
+    }
+    body{
+        background: #000;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    div{
+        border: 1px solid var(--random-color);
+        padding: 10px;
+        background: #222429;
+        color: #dddddd;
+        text-align: center;
+        transition: color 0.5s sase;
+        transition: border-radius 0.5s sase;
+        transition: background 0.3s ease;
+    }
+    div:hover:not(.grid-container){
+        color: var(--random-color);
+        border-radius: 10px;
+        background: rgb(86, 150, 104);
+    }
+    .grid-container{
+        display: grid;
+        border: 1px solid var(--random-color);
+        grid-template-columns: 
+        repeat(auto-fit,300px);
+        gap: 15px;
+        justify-content: center;
+    }
+</style>
+<body>
+    <h1>Responsive</h1>
+    <div class="grid-container" id="dynamicBox">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. At voluptatibus ipsa pariatur accusamus repellendus suscipit porro ducimus ratione, officia dolore cupiditate, architecto ut accusantium. Aut iusto nisi quam omnis corrupti!</div>
+    </div>
+    <script>
+        const box = document.getElementById('dynamicBox');
+        function setRandomColor() {
+          const randomColor = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0');
+          box.style.setProperty('--random-color', randomColor);
+        }
+        // 初始设置
+        setRandomColor();
+        // 每隔3秒更新
+        setInterval(setRandomColor, 1000);
+        </script>
+</body>
+</html>

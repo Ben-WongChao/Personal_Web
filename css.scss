@@ -1,0 +1,135 @@
+$bg-green: #4da667;
+$bg-yellow: #f6cf64;
+$bg-purp: #a9accd;
+$bg-grey: #e0e0e0;
+$colors: $bg-green, $bg-yellow, $bg-purp, $bg-grey;
+body {
+  font-family: "Google Sans", sans-serif;
+  font-size: 11px;
+}
+.img-wrap img {
+  border-radius: 120px;
+  width: 120px;
+  overflow: hidden;
+  height: 120px;
+  
+}
+.img-wrap {
+    height: 120px;
+    width: 120px;
+  transition: 400ms all;
+  position: relative;
+  animation-name: wobble;
+  animation-delay: 0s;
+  animation-duration: 4s; /* same for all */
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  cursor: pointer;
+  &.selected {
+    width: 200px;
+    height: 200px;
+  }
+  //  animation-duration: 1s;
+  &:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    bottom: 0;
+    left: 50%;
+    border-radius: 100%;
+    transform: translateX(-50%);
+    background-color: $bg-grey;
+  }
+  &:after {
+    background-color: $bg-grey;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    content: attr(data-role);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: absolute;
+    transition: 300ms 400ms all;
+    bottom: 6px;
+    left: 50%;
+    display: block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    z-index: 12;
+    transform: translateX(-50%);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.xs {
+  width: 30px;
+  height: 30px;
+}
+.s {
+  width: 40px;
+  height: 40px;
+}
+.m {
+  width: 60px;
+  height: 60px;
+}
+.l {
+  width: 80px;
+  height: 80px;
+}
+
+.imgs {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+@for $i from 1 to 15 {
+  .img-wrap:nth-child(#{$i}) {
+    animation-delay: $i * 0.24s;
+  }
+}
+@for $i from 1 through length($colors) {
+  .img-wrap:nth-child(#{length($colors)}n + #{$i}) {
+    &:before {
+      background: nth($colors, $i);
+    }
+      &:after {
+        background: nth($colors, $i);
+      }
+  }
+}
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(0%);
+  } // center
+  15% {
+    transform: translateX(-1%) translateY(-1%);
+  } // tleft
+  30% {
+    transform: translateX(1%) translateY(-1%);
+  } // bright
+  45% {
+    transform: translateX(1%) translateY(1%);
+  } // tright
+  60% {
+    transform: translateX(-1%) translateY(1%);
+  } // bleft
+  75% {
+    transform: translateX(1%) translateY(0);
+  } // mright
+  90% {
+    transform: translateX(-1%) translateY(0);
+  } // mleft
+  100% {
+    transform: translateX(0%);
+  } // center
+}
